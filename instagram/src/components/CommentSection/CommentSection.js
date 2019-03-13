@@ -1,4 +1,13 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import './_CommentSection.scss';
+import './CommentSection.scss';
+import Comment from '../Comment/Comment';
 
+const CommentSection = (props) => {
+    return (
+        <div className="comments">
+            {props.comments.map(comment => <Comment comment={comment} />)}
+        </div>
+    );
+}
+
+export default CommentSection;

@@ -1,7 +1,7 @@
 import React from 'react';
 import './PostContainer.scss';
 import PropTypes from 'prop-types';
-import CommentSection from './CommentSection/CommentSection';
+import CommentSection from '../CommentSection/CommentSection';
 import heart from './heart.png';
 import comment from './comment.png';
 

@@ -3,6 +3,7 @@ import dummyData from './dummy-data';
 import './App.scss';
 
 import SearchBar from './components/SearchBar/SearchBar';
+import Posts from './components/Posts/Posts';
 
 class App extends Component {
   state = {
@@ -13,6 +14,7 @@ class App extends Component {
     return (
       <div className="App">
         <SearchBar />
+        <Posts dummyData={this.state.dummyData} />
       </div>
     );
   }
