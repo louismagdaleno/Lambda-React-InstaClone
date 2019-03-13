@@ -26,4 +26,9 @@ const PostContainer = (props) => {
     );
 }
 
+PostContainer.propTypes = {
+    data: PropTypes.object
+    
+
+}
 export default PostContainer;
