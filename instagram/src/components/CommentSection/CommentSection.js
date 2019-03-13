@@ -1,5 +1,5 @@
 import React from 'react';
-import './CommentSection.scss';
+import './_CommentSection.scss';
 import Comment from '../Comment/Comment';
 
 const CommentSection = (props) => {

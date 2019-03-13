@@ -1,5 +1,5 @@
 import React from 'react';
-import './PostContainer.scss';
+import './_PostContainer.scss';
 import PropTypes from 'prop-types';
 import CommentSection from '../CommentSection/CommentSection';
 import heart from './heart.png';
