@@ -13,9 +13,9 @@ const SearchBar = props => {
     return (
         <header className="searchBar">
             <div className="searchBar_logos">
-                <img src={icon} alt="Instagram Logo" />
-                |
-                <img src={logo} alt="Instagram Logo" />
+                <img src={icon} className="icon" alt="Instagram Icon" />
+            
+                <img src={logo} className="logo" alt="Instagram Logo" />
             </div>
 
             <input type="text" placeholder="🔍 Search" />
