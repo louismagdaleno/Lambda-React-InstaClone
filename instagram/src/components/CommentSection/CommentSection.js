@@ -5,7 +5,7 @@ import Comment from '../Comment/Comment';
 const CommentSection = (props) => {
     return (
         <div className="comments">
-            {props.comments.map(comment => <Comment comment={comment} />)}
+            {props.comments.map((comment, index) => <Comment comment={comment} key={index} />)}
         </div>
     );
 }
