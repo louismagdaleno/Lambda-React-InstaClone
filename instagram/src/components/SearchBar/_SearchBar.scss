@@ -54,6 +54,10 @@
     @media screen and (max-width: 500px) {
         .searchBar_icons {
             width: 30%;
+
+            img:hover {
+                cursor: pointer;
+            }
         }
 
         .searchBar_logos {
@@ -61,7 +65,10 @@
             .logo {
                 margin-left: 5px;
                 padding-left: 5px;
+                
             }
+
+            
         }
     }
 }
