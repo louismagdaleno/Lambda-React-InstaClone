@@ -7,6 +7,7 @@
     align-items: center;
     margin-top: 10px;
     border-bottom: 1px solid silver;
+    padding: 0 10px;
 
 
     .searchBar_logos, .searchBar_icons {
@@ -15,12 +16,15 @@
     }
 
     .searchBar_logos > .icon {
-        width: 32px;
-        height: 32px;
+        width: auto;
+        height: 24px;
     }
     .searchBar_logos > .logo {
-        height: 36px;
-        width: 80px;
+        height: 24px;
+        width: auto;
+        margin-left: 15px;
+        padding-left: 15px;
+        border-left: 1px solid black;
     }
 
     .searchBar_logos {
@@ -30,12 +34,34 @@
 
     .searchBar_icons {
         width: 20%;
-        justify-content: space-around;
+        justify-content: space-between;
+
+        img {
+            width: auto;
+            height: 24px;
+        }
     
     }
         
 
     input {
         text-align: center;
+        width: 30%;
+        height: 24px;
+        font-size: 1.6rem;
+    }
+
+    @media screen and (max-width: 500px) {
+        .searchBar_icons {
+            width: 30%;
+        }
+
+        .searchBar_logos {
+            width: 30%;
+            .logo {
+                margin-left: 5px;
+                padding-left: 5px;
+            }
+        }
     }
 }
