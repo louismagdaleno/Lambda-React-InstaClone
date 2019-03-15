@@ -13,8 +13,8 @@ const Posts = props => {
     return (
         <div className="posts">
             {props.search.length > 0 
-            ? props.dummyData.filter(dummy => dummy.username.slice(0, props.search.length) === props.search).length > 0 
-                ? props.dummyData.filter(dummy => dummy.username.slice(0, props.search.length) === props.search).map((dummy, index) => <PostContainer data={dummy} key={index}/>) 
+            ? props.dummyData.filter(dummy => dummy.username.slice(0, props.search.length).toLowerCase() === props.search.toLowerCase()).length > 0 
+                ? props.dummyData.filter(dummy => dummy.username.slice(0, props.search.length).toLowerCase() === props.search.toLowerCase()).map((dummy, index) => <PostContainer data={dummy} key={index}/>) 
                 : <h2>No Results Found</h2>
             : props.dummyData.map((dummy, index) => <PostContainer data={dummy} key={index}/>)}
         </div>
