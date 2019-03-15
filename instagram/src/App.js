@@ -7,14 +7,19 @@ import Posts from './components/Posts/Posts';
 
 class App extends Component {
   state = {
-    dummyData: dummyData
+    dummyData : ''
+  }
+
+  componentDidMount() {
+    this.setState({dummyData: dummyData});
   }
 
   render() {
     return (
       <div className="App">
         <SearchBar />
-        <Posts dummyData={this.state.dummyData} />
+        {this.state.dummyData ? <Posts dummyData={this.state.dummyData} /> : <h2>Loading...</h2>}
+        
       </div>
     );
   }
