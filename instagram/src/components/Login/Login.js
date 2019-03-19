@@ -10,7 +10,7 @@ class Login extends Component {
     }
 
     login = () => {
-        
+        localStorage.setItem(`username`, `${this.state.username}`);
     }
     changeHandler = (e) => {
         this.setState({

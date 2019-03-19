@@ -4,14 +4,21 @@ import './App.scss';
 
 import PostsPage from './components/Posts/PostsPage';
 import withAuthenticate from './components/authentication/withAuthenticate';
+import Login from './components/Login/Login';
 
 class App extends Component {
   state = {
     dummyData : '',
-    searchCriteria : ''
+    searchCriteria : '',
+    loggedIn : false
   }
 
   componentDidMount() {
+    if (localStorage.getItem('username')) {
+      this.setState({loggedIn : true})
+    } else {
+      this.setState({loggedIn : false})
+    }
     this.setState({dummyData: dummyData});
   }
 
@@ -29,8 +36,7 @@ class App extends Component {
     const ComponentFromWithAuthenticate = withAuthenticate(Page);
     return (
       <div className="App">
-        <ComponentFromWithAuthenticate />
-        
+        {this.state.loggedIn ? <ComponentFromWithAuthenticate /> : <Login />}
       </div>
     );
   }
