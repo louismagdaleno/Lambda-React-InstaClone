@@ -3,6 +3,7 @@ import dummyData from './dummy-data';
 import './App.scss';
 
 import PostsPage from './components/Posts/PostsPage';
+import withAuthenticate from './components/authentication/withAuthenticate';
 
 class App extends Component {
   state = {
@@ -24,9 +25,11 @@ class App extends Component {
   }
 
   render() {
+    const Page = (props) => <PostsPage {...this.state} changeHandler={this.changeHandler} search={this.search} />;
+    const ComponentFromWithAuthenticate = withAuthenticate(Page);
     return (
       <div className="App">
-        <PostsPage dummyData={this.state.dummyData} searchCriteria={this.state.searchCriteria} changeHandler={this.changeHandler} search={this.search} />
+        <ComponentFromWithAuthenticate />
         
       </div>
     );
