@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import dummyData from './dummy-data';
 import './App.scss';
 
-import SearchBar from './components/SearchBar/SearchBar';
-import Posts from './components/Posts/Posts';
+import PostsPage from './components/Posts/PostsPage';
 
 class App extends Component {
   state = {
@@ -27,8 +26,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <SearchBar text={this.state.searchCriteria} search={this.search} changed={this.changeHandler} />
-        {this.state.dummyData ? <Posts dummyData={this.state.dummyData} search={this.state.searchCriteria} /> : <h2>Loading...</h2>}
+        <PostsPage dummyData={this.state.dummyData} searchCriteria={this.state.searchCriteria} changeHandler={this.changeHandler} search={this.search} />
         
       </div>
     );
