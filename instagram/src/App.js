@@ -3,14 +3,19 @@ import dummyData from './dummy-data';
 import './App.scss';
 
 import PostsPage from './components/Posts/PostsPage';
-import withAuthenticate from './components/authentication/withAuthenticate';
+import withAuthenticate from './authentication/withAuthenticate';
 import Login from './components/Login/Login';
+import PostContainer from './components/PostContainer/PostContainer';
+
+const AuthenticatePage = withAuthenticate(PostsPage)(Login);
 
 class App extends Component {
   state = {
     dummyData : '',
     searchCriteria : '',
-    loggedIn : false
+    loggedIn : false,
+    username : '',
+    password : ''
   }
 
   componentDidMount() {
@@ -21,22 +26,24 @@ class App extends Component {
     }
     this.setState({dummyData: dummyData});
   }
+  login = () => {
+       
+    localStorage.setItem(`username`, `${this.state.username}`);
+    this.setState({loggedIn : true});
+}
 
   changeHandler = (event) => {
     this.setState({
       [event.target.name] : event.target.value
     })
   }
-  search = (event) => {
-
-  }
+ 
 
   render() {
-    const Page = (props) => <PostsPage {...this.state} changeHandler={this.changeHandler} search={this.search} />;
-    const ComponentFromWithAuthenticate = withAuthenticate(Page);
+   
     return (
       <div className="App">
-        {this.state.loggedIn ? <ComponentFromWithAuthenticate /> : <Login />}
+        <AuthenticatePage {...this.state} login={this.login} changeHandler={this.changeHandler} />
       </div>
     );
   }
