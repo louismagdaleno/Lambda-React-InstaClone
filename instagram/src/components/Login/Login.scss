@@ -11,6 +11,9 @@
     img {
         width: 40%;
         height: auto;
+        @media screen and (max-width: 500px) {
+            width: 60%;
+        }
     }
 
     form {
@@ -61,5 +64,11 @@
         button:hover {
             cursor: pointer;
         }
+
+        @media screen and (max-width: 500px) {
+            width: 80%;
+        }
     }
+
+   
 }
