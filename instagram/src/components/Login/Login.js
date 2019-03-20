@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 
+import instagram from './instagram.png';
+import './Login.scss';
+
 class Login extends Component {
     constructor(props) {
         super();
@@ -20,11 +23,15 @@ class Login extends Component {
 
     render() {
         return (
-            <form onSubmit={this.login}>
-                <input type="text" name="username" value={this.state.username} onChange={this.changeHandler} placeholder="Username"/>
-                <input type="password"   name="password" value={this.state.password} onChange={this.changeHandler} placeholder="Password"/>
-                <button type="submit" >Submit</button>
-            </form>
+            <div className="login">
+                <img src={instagram} />
+                <form onSubmit={this.login}>
+                    <input type="text" name="username" value={this.state.username} onChange={this.changeHandler} placeholder="Username"/>
+                    <input type="password"   name="password" value={this.state.password} onChange={this.changeHandler} placeholder="Password"/>
+                    <p>Forgot password?</p>
+                    <button type="submit" >Login</button>
+                </form>
+            </div>
         );
     }
 }
