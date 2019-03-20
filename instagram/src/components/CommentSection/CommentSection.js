@@ -8,7 +8,8 @@ class CommentSection extends Component {
         super(props)
         this.state = {
             comments : props.comments,
-            text : ''
+            text : '',
+            currentUser : ''
         }
     }
     changeHandler = event => {
@@ -18,11 +19,12 @@ class CommentSection extends Component {
         event.preventDefault();
         this.setState(prevState => ({
             comments: [...prevState.comments, {
-                username: 'Louis',
+                username: localStorage.getItem('username'),
                 text: this.state.text
             }]
         }))
     }
+    
     render () {
         return (
             <div className="comments">
