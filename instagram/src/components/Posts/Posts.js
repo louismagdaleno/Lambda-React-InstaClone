@@ -1,7 +1,14 @@
 import React from 'react';
 import PostContainer from '../PostContainer/PostContainer';
-import './_Posts.scss';
+import styled from 'styled-components';
 import PropTypes from 'prop-types';
+
+const PostsDiv = styled.div`
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+`;
 
 // Search Feature
 // Check if length of search str is greater than 0
@@ -11,13 +18,13 @@ import PropTypes from 'prop-types';
 // If the search criteria's length is 0, we aren't searching for anything so just display all posts
 const Posts = props => {
     return (
-        <div className="posts">
+        <PostsDiv>
             {props.search.length > 0 
             ? props.dummyData.filter(dummy => dummy.username.slice(0, props.search.length).toLowerCase() === props.search.toLowerCase()).length > 0 
                 ? props.dummyData.filter(dummy => dummy.username.slice(0, props.search.length).toLowerCase() === props.search.toLowerCase()).map((dummy, index) => <PostContainer data={dummy} key={index}/>) 
                 : <h2>No Results Found</h2>
             : props.dummyData.map((dummy, index) => <PostContainer data={dummy} key={index}/>)}
-        </div>
+        </PostsDiv>
     );
 }
 
