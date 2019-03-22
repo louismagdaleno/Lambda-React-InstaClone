@@ -1,11 +1,25 @@
 import React from 'react';
-import './_Comment.scss';
+import styled from 'styled-components';
 import PropTypes from 'prop-types';
+
+const CommentP = styled.p`
+font-weight: 500;
+margin-bottom: 10px;
+padding: 0 10px;
+
+span {
+    font-weight: 700;
+
+}
+
+span:hover {
+    cursor: pointer;
+}`;
 
 const Comment = (props) => {
     return (
-        <p className="comment"><span>{props.comment.username}</span> {props.comment.text}
-        </p>
+        <CommentP className="comment"><span>{props.comment.username}</span> {props.comment.text}
+        </CommentP>
     );
 }
 Comment.propTypes = {
