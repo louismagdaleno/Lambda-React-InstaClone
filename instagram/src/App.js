@@ -1,12 +1,25 @@
 import React, { Component } from 'react';
 import dummyData from './dummy-data';
-import './App.scss';
+import styled from 'styled-components'
+
 
 import PostsPage from './components/Posts/PostsPage';
 import withAuthenticate from './authentication/withAuthenticate';
 import Login from './components/Login/Login';
 
 const AuthenticatePage = withAuthenticate(PostsPage)(Login);
+
+const AppDiv = styled.div`
+  text-align: center;
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  
+  background: lightgray;
+
+`;
 
 class App extends Component {
   state = {
@@ -46,9 +59,9 @@ class App extends Component {
   render() {
    
     return (
-      <div className="App">
+      <AppDiv>
         <AuthenticatePage {...this.state} login={this.login} changeHandler={this.changeHandler} />
-      </div>
+      </AppDiv>
     );
   }
 }
